@@ -1,0 +1,6 @@
+@ExempleCrudClientWithRedis_HostAddress = http://localhost:5114
+
+GET {{ExempleCrudClientWithRedis_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
