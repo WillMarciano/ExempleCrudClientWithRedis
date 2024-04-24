@@ -1,29 +1,55 @@
 # ExempleCrudClientWithRedis
 
-## DescriÁ„o
+## Descri√ß√£o
 
-Este projeto È uma aplicaÁ„o CRUD simples que utiliza o Redis como banco de dados. 
-… uma aplicaÁ„o simples de gerenciamento de clientes. O usu·rio pode criar, ler, atualizar e excluir clientes.
+Este projeto √© uma aplica√ß√£o CRUD simples que utiliza o Redis como banco de dados. 
+√â uma aplica√ß√£o simples de gerenciamento de clientes. O usu√°rio pode criar, ler, atualizar e excluir clientes.
+Nesse exemplo estou demostrando como gerar o Redis atrav√©s do docker, caso j√° tenha instalado o Redis 
 
 ## Tecnologias utilizadas
 
-	- Dotnet Core 8.0
-	- Redis
+- Dotnet Core 8.0
+- Redis
 
-## Programas necess·rios
+## Programas necess√°rios
 
-	- Dotnet Core 8.0
-	- Redis
-	- Docker for Desktop
+- Dotnet Core 8.0
+- Redis
+- Docker for Desktop
 
 ## Como rodar o projeto
 
 1. tenha o Docker for Desktop instalado			
-2. Abra o terminal e execute o comando `docker run --name redis -p 6379:6379 -d redis`															
-3. para confirmar que o contariner est· rodando execute o comando `docker ps`			
-4. Vamos testar a conex„o com o Redis, execute o comando `docker exec -it redis redis-cli` e depois execute o comando `ping`
-5. Caso a resposta seja `PONG` o Redis est· funcionando corretamente
-6. Clone o repositÛrio `git clone https://github.com/WillMarciano/ExempleCrudClientWithRedis.git`		
-7. Abra o projeto no Visual Studio Code ou Visual Studio
-8. Execute o projeto
+2. Abra o terminal e execute o comando `docker run --name local-redis -p 6379:6379 -d redis`
+4. para confirmar que o contariner est√° rodando execute o comando `docker ps`			
+5. Vamos testar a conex√£o com o Redis, execute o comando `docker exec -it local-redis sh` e depois execute o comando `redis-cli`
+6. Voc√™ ver√° o sinal # indicando que entrou no cont√™iner, digite o comando `ping`
+7. Caso a resposta seja `PONG` o Redis est√° funcionando corretamente
+
+![image](https://github.com/WillMarciano/ExempleCrudClientWithRedis/assets/34887614/a047120f-023c-42ac-860b-e5aa96b8bbfa)	
+   
+8. Clone o reposit√≥rio `git clone https://github.com/WillMarciano/ExempleCrudClientWithRedis.git`
+9. Caso tenha istalado o Redis em outra porta configure a ConnectionString do AppSettings conforme sua configura√ß√£o
+    ![image](https://github.com/WillMarciano/ExempleCrudClientWithRedis/assets/34887614/68e81e6d-b694-4534-9f47-0d29eaa59984)
+ 
+10. Abra o projeto no Visual Studio Code ou Visual Studio
+11. Execute o projeto
+
+![image](https://github.com/WillMarciano/ExempleCrudClientWithRedis/assets/34887614/99887094-c5a3-45ad-a616-81b572e07c54)
+
+12. Testando adicionando Cliente, estou fazendo pelo proprio swagger, pode testar no Postman ou Insomia caso deseje
+    
+
+    ![image](https://github.com/WillMarciano/ExempleCrudClientWithRedis/assets/34887614/32ded615-5f36-4fe5-aabc-5a113a56b879)
+
+    ![image](https://github.com/WillMarciano/ExempleCrudClientWithRedis/assets/34887614/00ee8754-28f3-481e-83d9-e9f8956d3e76)
+
+
+14. Uma vez adicionado Para Visualizar no Redis o que foi salvo abra o cmd e rode o passo 5 novamente
+15. Digite o comando `get 0` , esse comando pega a chave que foi cadastrada do id, no meu caso 0
+
+    ![image](https://github.com/WillMarciano/ExempleCrudClientWithRedis/assets/34887614/3f26cfc3-8109-4271-a709-5e03c874d7ab)
+
+
+
 
